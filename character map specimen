@@ -1,0 +1,14 @@
+# Specimen of character map
+
+pageSize ="A4"
+border = 40
+fS = 24 # Font Size
+
+fontsInstalled = installedFonts()
+fontList = [x for x in fontsInstalled if "Actual" in x]
+print(fontList)
+for fontName in fontList:
+    newPage(pageSize)
+    txt = FormattedString(font=fontName, fontSize=fS)
+    txt.appendGlyph(*txt.listFontGlyphNames())
+    txt=textBox (txt, (border, border, width()-border*2, height()-border*2))s
